@@ -22,6 +22,7 @@
     <meta name="twitter:description" content="3 年产品经验，深耕 AI 应用落地：主导可信 AI 评估、AI 营销等系统从 0 到 1，累计交付 15+ 项目，覆盖 AI、电商、智能硬件与企业 B 端。">
     <meta name="twitter:image" content="https://djie168dd-cyber.github.io/portfolio/og-image.jpg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
     <!-- 主题初始化脚本(防止闪烁) -->
     <script>
         (function() {
@@ -84,11 +85,18 @@
                 </div>
                 <h1 class="hero-title">
                     你好，我是<span class="gradient-text">邓洁</span><br>
-                    求职岗位：产品经理/专员
+                    <span class="hero-title-sub">求职岗位：产品经理/专员</span>
                 </h1>
                 <p class="hero-subtitle">
                     3 年时间，专注于把模糊的业务诉求变成可上线、可复盘、能持续创造价值的产品方案。
                 </p>
+                <div class="hero-ai">
+                    <button type="button" class="btn btn-ai hero-ai-btn" data-rag-open>
+                        <svg class="btn-ai-spark" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.4L12 16l-1.8-5.6L4.5 9l5.7-1.4L12 2zM19 14l.9 2.6L22.5 18l-2.6.9L19 21.5l-.9-2.6L15.5 18l2.6-.9L19 14z"/></svg>
+                        和我的经历直接对话
+                    </button>
+                    <p class="hero-ai-note">进入 AI 互动简历，了解我</p>
+                </div>
                 <div class="hero-actions">
                     <a href="#portfolio" class="btn btn-primary">
                         查看作品集
@@ -209,6 +217,74 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 全流程交付方法（原创流程图） -->
+            <div class="flow-card">
+                <div class="flow-head">
+                    <h3>我的产品全流程交付方法</h3>
+                    <div class="flow-mode">
+                        <span><b>敏捷模式</b>小步快跑，需求池滚动进迭代，适合 AI / 互联网类持续优化项目</span>
+                        <span><b>瀑布模式</b>里程碑节点 + 评审关卡强管控，适合政企合规与软硬件协同项目</span>
+                    </div>
+                </div>
+                <div class="pf-bar">
+                    <details class="pf-stage">
+                        <summary>
+                            <span class="pf-stage-no">01</span>
+                            <span class="pf-stage-name">需求</span>
+                            <span class="pf-stage-out">PRD · 原型 · 流程图</span>
+                            <span class="pf-stage-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="pf-stage-body">
+                            <ol class="pf-rows">
+                                <li><i class="r-no">1</i><div><span class="r-name">需求收集</span><span class="r-who">产品 · 访谈 / 数据</span><p class="r-ev">智能枕头从「起床最后一米」场景识别闹钟漏响、铃声吵醒同床人的痛点。</p></div></li>
+                                <li><i class="r-no">2</i><div><span class="r-name">需求分析与排序</span><span class="r-who">产品 · 画像 / 优先级</span><p class="r-ev">物料系统优先做电子台账、申请审批、盘点归还三大高频模块。</p></div></li>
+                                <li><i class="r-no">3</i><div><span class="r-name">可行性评审 <span class="r-gate">◆关卡</span></span><span class="r-who">产品 + 开发</span><p class="r-ev">确认 BLE 配置边界与闹钟槽位上限（最多 10 组）再排期。</p></div></li>
+                                <li><i class="r-no">4</i><div><span class="r-name">原型 / PRD / UI</span><span class="r-who">产品 + 设计 · Mastergo / Axure / Visio</span><p class="r-ev">高保真原型配业务与数据流转图，AI 辅助生成原型与思维导图。</p></div></li>
+                                <li><i class="r-no">5</i><div><span class="r-name">需求宣讲评审 <span class="r-gate">◆关卡</span></span><span class="r-who">全员对齐</span><p class="r-ev">讲清双通道唤醒、重连即对账，拆成蓝牙指令清单与硬件团队对齐。</p></div></li>
+                            </ol>
+                        </div>
+                    </details>
+                    <div class="pf-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+                    <details class="pf-stage">
+                        <summary>
+                            <span class="pf-stage-no">02</span>
+                            <span class="pf-stage-name">研发</span>
+                            <span class="pf-stage-out">里程碑 · 测试 · 验收</span>
+                            <span class="pf-stage-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="pf-stage-body">
+                            <ol class="pf-rows">
+                                <li><i class="r-no">6</i><div><span class="r-name">技术方案评审</span><span class="r-who">产品 + 开发 · 接口 / 风险</span><p class="r-ev">研祥跳蚤商城约定 Rest API 核销、Webhook 状态回传的对接规则。</p></div></li>
+                                <li><i class="r-no">7</i><div><span class="r-name">启动排期</span><span class="r-who">产品 + 开发</span><p class="r-ev">可信 AI 评估系统从 0 到 1 拆分版本节奏、设定里程碑与发布时间。</p></div></li>
+                                <li><i class="r-no">8</i><div><span class="r-name">研发跟进</span><span class="r-who">飞书多维表格管排期风险</span><p class="r-ev">统一管需求池、排期与风险，日常对齐、及时解阻塞，保障按期上线。</p></div></li>
+                                <li><i class="r-no">9</i><div><span class="r-name">测试 / 提测</span><span class="r-who">产品 + 开发 + 测试 · 真机联调</span><p class="r-ev">AI 生成测试用例提效；智能枕头按蓝牙指令清单逐条核对连接与闹钟。</p></div></li>
+                                <li><i class="r-no">10</i><div><span class="r-name">里程碑验收 <span class="r-gate">◆关卡</span></span><span class="r-who">产品 + 客户</span><p class="r-ev">主导中企通信国企项目按政企合规要求完成全流程落地与验收。</p></div></li>
+                            </ol>
+                        </div>
+                    </details>
+                    <div class="pf-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+                    <details class="pf-stage">
+                        <summary>
+                            <span class="pf-stage-no">03</span>
+                            <span class="pf-stage-name">发布</span>
+                            <span class="pf-stage-out">上线 · 数据 · 迭代</span>
+                            <span class="pf-stage-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="pf-stage-body">
+                            <ol class="pf-rows">
+                                <li><i class="r-no">11</i><div><span class="r-name">发布准备</span><span class="r-who">产品 + 客服 · 培训 / 文档</span><p class="r-ev">完成售前演示、客服培训与操作文档，负责售后培训与日常维护。</p></div></li>
+                                <li><i class="r-no">12</i><div><span class="r-name">灰度 / 上线</span><span class="r-who">开发 + 运维</span><p class="r-ev">智能枕头 App 签名打包交付，连接、闹钟、设置三大模块上线运行。</p></div></li>
+                                <li><i class="r-no">13</i><div><span class="r-name">数据监控</span><span class="r-who">开发 + 运营 · 埋点 / 指标</span><p class="r-ev">关注连接成功率、闹钟触发成功率、重连后数据一致率等核心指标。</p></div></li>
+                                <li><i class="r-no">14</i><div><span class="r-name">运营与反馈</span><span class="r-who">运营 + 产品</span><p class="r-ev">汉全 AI 营销负责宣传视频、公众号推文，持续收集客户反馈。</p></div></li>
+                                <li><i class="r-no">15</i><div><span class="r-name">复盘与迭代</span><span class="r-who">需求池滚动闭环</span><p class="r-ev">AI 营销持续迭代，客户获客效率 +50%、标杆客户年签单破 500 万元。</p></div></li>
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+                <div class="pf-loop">数据与反馈回流需求池，进入下一轮迭代闭环</div>
+                <p class="pf-hint">点击阶段卡片，展开该阶段 5 个步骤与项目证据</p>
+            </div>
         </div>
     </section>
 
@@ -288,7 +364,7 @@
             </div>
 
             <div class="portfolio-grid" id="portfolioGrid">
-                <!-- 项目 1: 可信AI评估系统 -->
+                <!-- 项目 1: 可信AI评估系统（有项目截图） -->
                 <article class="project-card" data-category="ai">
                     <div class="project-body">
                         <div class="project-heading">
@@ -300,11 +376,11 @@
                             <span>Opik 框架</span><span>裁判大模型</span><span>多智能体调度</span>
                         </div>
                         <a class="project-toggle" href="case-study.html?case=ai-evaluation" target="_blank" rel="noopener" aria-label="在新标签页查看可信 AI 评估系统案例详情">查看详情</a>
-                        
+
                     </div>
                 </article>
 
-                <!-- 项目 2: 汉全AI营销系统 -->
+                <!-- 项目 2: 汉全AI营销系统（有项目截图） -->
                 <article class="project-card" data-category="ai">
                     <div class="project-body">
                         <div class="project-heading">
@@ -316,11 +392,11 @@
                             <span>RPA 自动化</span><span>AI 获客</span><span>24h 无人值守</span>
                         </div>
                         <a class="project-toggle" href="case-study.html?case=ai-marketing" target="_blank" rel="noopener" aria-label="在新标签页查看汉全 AI 营销系统案例详情">查看详情</a>
-                        
+
                     </div>
                 </article>
 
-                <!-- 项目 3: 智能枕头闹铃系统APP -->
+                <!-- 项目 3: 智能枕头闹铃系统APP（有项目文档） -->
                 <article class="project-card" data-category="iot">
                     <div class="project-body">
                         <div class="project-heading">
@@ -331,12 +407,73 @@
                         <div class="project-tags">
                             <span>React Native</span><span>BLE 蓝牙</span><span>软硬件协同</span>
                         </div>
-                        <a class="project-toggle" href="case-study.html?case=smart-pillow" target="_blank" rel="noopener" aria-label="在新标签页查看智能枕头闹铃系统 APP 案例详情">查看详情</a>
-                        
+                        <div class="project-actions">
+                            <div class="project-doc-list">
+                                <a class="project-toggle project-doc-toggle" href="smart-pillow-prd.pdf" target="_blank" rel="noopener" type="application/pdf" aria-label="在新标签页打开智能闹钟枕 App 产品需求文档 PDF">PRD 文档</a>
+                            </div>
+                            <a class="project-toggle" href="case-study.html?case=smart-pillow" target="_blank" rel="noopener" aria-label="在新标签页查看智能枕头闹铃系统 APP 案例详情">查看详情</a>
+                        </div>
+
                     </div>
                 </article>
 
-                <!-- 项目 4: 研祥跳蚤商城 -->
+                <!-- 项目 4: GM 钟表（有项目文档 + 项目截图） -->
+                <article class="project-card" data-category="ecommerce">
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <p class="project-role">项目角色 · 电商平台产品设计</p>
+                            <h3 class="project-title">GM 钟表</h3>
+                        </div>
+                        <p class="project-desc">集社区互动、评论、行业资讯、商家入驻、商城交易与用户沟通于一体的钟表垂直电商平台。</p>
+                        <div class="project-tags">
+                            <span>社区互动</span><span>商家入驻</span><span>电商交易</span>
+                        </div>
+                        <div class="project-actions">
+                            <div class="project-doc-list">
+                                <a class="project-toggle project-doc-toggle" href="https://lanhuapp.com/link/#/invite?sid=qXxtLJNa" target="_blank" rel="noopener" aria-label="在新标签页打开 GM 钟表 APP 蓝湖交互原型">交互原型</a>
+                            </div>
+                            <a class="project-toggle" href="case-study.html?case=gm-watch" target="_blank" rel="noopener" aria-label="在新标签页查看 GM 钟表案例详情">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目 5: 活动物料管理系统（有项目文档） -->
+                <article class="project-card" data-category="enterprise">
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <p class="project-role">项目角色 · 企业系统产品设计</p>
+                            <h3 class="project-title">活动物料管理系统</h3>
+                        </div>
+                        <p class="project-desc">为中企活动场景建设物料全生命周期管理系统，覆盖台账、申请审批、出入库、盘点归还的在线协同。</p>
+                        <div class="project-tags">
+                            <span>物料台账</span><span>审批流</span><span>出入库</span>
+                        </div>
+                        <div class="project-actions">
+                            <div class="project-doc-list">
+                                <a class="project-toggle project-doc-toggle" href="https://docs.qq.com/pdf/DSmdQUFBTc2xsYUxz" target="_blank" rel="noopener" aria-label="在新标签页打开活动物料管理系统需求文档（腾讯文档）">PRD 文档</a>
+                                <a class="project-toggle project-doc-toggle" href="https://mastergo.com/goto/VIj0BFGt?page_id=0:27&file=195662030060283" target="_blank" rel="noopener" aria-label="在新标签页打开活动物料管理系统 MasterGo 交互原型">交互原型</a>
+                            </div>
+                            <a class="project-toggle" href="case-study.html?case=event-materials" target="_blank" rel="noopener" aria-label="在新标签页查看活动物料管理系统案例详情">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 项目 6: 去中心化钱包-HKT Wallet（有项目截图） -->
+                <article class="project-card" data-category="web3">
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <p class="project-role">项目角色 · Web3 产品设计</p>
+                            <h3 class="project-title">去中心化钱包-HKT Wallet</h3>
+                        </div>
+                        <p class="project-desc">参考 TP 钱包体验的多链钱包，覆盖以太坊、BSC 等 12+ 公链，集成多链资产、闪对兑换与 DApp 发现入口。</p>
+                        <div class="project-tags">
+                            <span>多链资产</span><span>闪对兑换</span><span>DApp 浏览器</span>
+                        </div>
+                        <a class="project-toggle" href="case-study.html?case=decentralized-wallet" target="_blank" rel="noopener" aria-label="在新标签页查看去中心化钱包-HKT Wallet案例详情">查看详情</a>
+                    </div>
+                </article>
+
+                <!-- 项目 7: 研祥跳蚤商城 -->
                 <article class="project-card" data-category="ecommerce">
                     <div class="project-body">
                         <div class="project-heading">
@@ -348,26 +485,11 @@
                             <span>兑换码系统</span><span>规则引擎</span><span>自动对账分账</span>
                         </div>
                         <a class="project-toggle" href="case-study.html?case=marketplace" target="_blank" rel="noopener" aria-label="在新标签页查看研祥跳蚤商城案例详情">查看详情</a>
-                        
+
                     </div>
                 </article>
 
-                <!-- 项目 5: GM 钟表 -->
-                <article class="project-card" data-category="ecommerce">
-                    <div class="project-body">
-                        <div class="project-heading">
-                            <p class="project-role">项目角色 · 电商平台产品设计</p>
-                            <h3 class="project-title">GM 钟表</h3>
-                        </div>
-                        <p class="project-desc">集社区互动、评论、行业资讯、商家入驻、商城交易与用户沟通于一体的钟表垂直电商平台。</p>
-                        <div class="project-tags">
-                            <span>社区互动</span><span>商家入驻</span><span>电商交易</span>
-                        </div>
-                        <a class="project-toggle" href="case-study.html?case=gm-watch" target="_blank" rel="noopener" aria-label="在新标签页查看 GM 钟表案例详情">查看详情</a>
-                    </div>
-                </article>
-
-                <!-- 项目 6: 广州酒家电商平台+小程序 -->
+                <!-- 项目 8: 广州酒家电商平台+小程序 -->
                 <article class="project-card" data-category="ecommerce">
                     <div class="project-body">
                         <div class="project-heading">
@@ -382,22 +504,7 @@
                     </div>
                 </article>
 
-                <!-- 项目 7: 活动物料管理系统 -->
-                <article class="project-card" data-category="enterprise">
-                    <div class="project-body">
-                        <div class="project-heading">
-                            <p class="project-role">项目角色 · 企业系统产品设计</p>
-                            <h3 class="project-title">活动物料管理系统</h3>
-                        </div>
-                        <p class="project-desc">为中企活动场景建设物料全生命周期管理系统，覆盖台账、申请审批、出入库、盘点归还的在线协同。</p>
-                        <div class="project-tags">
-                            <span>物料台账</span><span>审批流</span><span>出入库</span>
-                        </div>
-                        <a class="project-toggle" href="case-study.html?case=event-materials" target="_blank" rel="noopener" aria-label="在新标签页查看活动物料管理系统案例详情">查看详情</a>
-                    </div>
-                </article>
-
-                <!-- 项目 8: 小家链 APP 电商商城 -->
+                <!-- 项目 9: 小家链 APP 电商商城 -->
                 <article class="project-card" data-category="ecommerce">
                     <div class="project-body">
                         <div class="project-heading">
@@ -409,21 +516,6 @@
                             <span>移动商城</span><span>交易链路</span><span>营销玩法</span>
                         </div>
                         <a class="project-toggle" href="case-study.html?case=xiaojialian" target="_blank" rel="noopener" aria-label="在新标签页查看小家链 APP 电商商城案例详情">查看详情</a>
-                    </div>
-                </article>
-
-                <!-- 项目 9: 去中心化钱包 -->
-                <article class="project-card" data-category="web3">
-                    <div class="project-body">
-                        <div class="project-heading">
-                            <p class="project-role">项目角色 · Web3 产品设计</p>
-                            <h3 class="project-title">去中心化钱包</h3>
-                        </div>
-                        <p class="project-desc">参考 TP 钱包体验的轻量钱包，对接两条主流公链，聚焦资产管理与转账收款，不内置 DApp 浏览器。</p>
-                        <div class="project-tags">
-                            <span>多链资产</span><span>助记词</span><span>转账收款</span>
-                        </div>
-                        <a class="project-toggle" href="case-study.html?case=decentralized-wallet" target="_blank" rel="noopener" aria-label="在新标签页查看去中心化钱包案例详情">查看详情</a>
                     </div>
                 </article>
 
@@ -512,5 +604,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="chat-widget.js"></script>
 </body>
 </html>

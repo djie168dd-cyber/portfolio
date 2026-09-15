@@ -6,6 +6,7 @@
     <meta name="description" content="邓洁产品经理作品集案例详情">
     <title>项目案例 | 邓洁 · 产品经理</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
     <!-- 主题初始化脚本(防止闪烁) -->
     <script>
         (function() {
@@ -60,7 +61,13 @@
                 tags: ["RPA 自动化", "AI 获客", "微信机器人"],
                 metrics: [["+50%", "客户获客效率提升"], ["500万+", "标杆客户年签单额"]],
                 intro: "面向 B2B 企业的 AI 获客与数字员工系统，基于 Android 端 RPA 命令执行能力，整合主动获客、微信机器人、群发与 SOP 跟进等模块，形成可规模化执行的私域运营解决方案。",
-                shot: "marketing", problems: ["B2B 获客成本高，线索挖掘和跟进依赖人工操作。", "私域运营流程分散，多账号管理与标准化执行成本高。", "企业需要稳定、可配置的无人值守运营机制。"],
+                shot: "marketing", shotImages: [
+                    ["ai-marketing-dashboard.png", "工作台总览：AI 获客、AI 个微、AI 数字人等能力矩阵"],
+                    ["ai-marketing-lead-task.png", "智能获客：创建自动获客任务（关键词线索监测与采集）"],
+                    ["ai-marketing-wechat-sop.png", "AI 销冠：个微设备管理与 SOP 任务跟进"],
+                    ["ai-marketing-ai-employee.png", "AI 员工：数据分析智能体（竞品 / 客户 / 销售分析）"]
+                ],
+                problems: ["B2B 获客成本高，线索挖掘和跟进依赖人工操作。", "私域运营流程分散，多账号管理与标准化执行成本高。", "企业需要稳定、可配置的无人值守运营机制。"],
                 role: ["负责产品规划、需求迭代与全流程推进。", "调研 B2B 获客及私域运营场景，梳理客户反馈与功能优先级。", "输出迭代方案，协同研发、运营完成系统落地与推广。"],
                 output: ["搭建主动获客引擎，基于关键词匹配精准捕获潜在客户线索，系统自动执行好友添加，替代人工搜索与逐一添加，有效降低获客成本，帮助客户提升获客效率 50%。", "基于 RPA 的 UI 自动化模拟真人操作，打通微信机器人、群发、朋友圈营销、自动加微、智能对话与 SOP 跟进等全流程运营动作，支持一人多号管理。", "标杆客户皇宝国际集团使用系统后，通过 AI 精准营销与线索高效转化，一年内成功签单额突破 500 万元；系统支持 24 小时无人值守运营，实现私域运营规模化。"]
             },
@@ -69,10 +76,11 @@
                 summary: "连接智能枕头硬件与移动端，通过 BLE 通信、闹钟配置和参数控制，构建稳定易用的 IoT 使用体验。",
                 tags: ["React Native", "BLE 蓝牙", "IoT"],
                 metrics: [["双通道", "软硬件协同保障唤醒可靠性"], ["自动对账", "重连即同步，保障数据一致"]],
-                intro: "为智能枕头硬件配套的移动端应用，通过 BLE 低功耗蓝牙建立连接，支持设备配网、闹钟设置及参数调节，并围绕断连、重连与唤醒可靠性设计软硬件协同机制。",
+                intro: "智能枕头内置可振动、可发声的硬件闹钟，却没有操作界面，设备配对、闹钟设置与参数调节都缺少入口；而传统唤醒方式又各有失效风险：手机闹钟可能因 App 被系统关闭而漏响，单靠枕头硬件会遇到没电或故障，铃声还容易吵醒同床的人。这款 App 即为解决上述问题而开发：围绕用户“起床最后一米”的场景，通过 BLE 低功耗蓝牙实现零门槛配对与参数调节，用“双通道唤醒”保证到点一定响，用“重连即对账”保证手机与枕头数据一致，并将铃声与振动设为独立开关，兼顾浅眠与同居人群。",
                 shot: "pillow", problems: ["硬件与手机需保持稳定蓝牙连接，并支持设备配网与参数配置。", "单一闹钟通道存在失效风险，影响用户对产品的信任。", "断连重连后两端闹钟数据可能不一致。"],
                 role: ["负责 APP 端产品方案、原型与 PRD 输出。", "对接硬件团队，梳理蓝牙通信能力和设备配置边界。", "借助 AI 辅助完成原型设计、需求拆解与文档交付。"],
-                output: ["完成 BLE 低功耗蓝牙通信方案：手机作为中心设备发起连接，枕头作为外围设备广播并响应，降低使用门槛，覆盖设备配网、闹钟设置与参数调节。", "创新设计“双通道唤醒”方案：闹钟同时写入硬件与手机系统级定时任务，任一通道到点即可唤醒，避免单通道失效导致闹钟不响。", "建立“重连即对账”规则，蓝牙断开重连后 APP 自动同步全部闹钟至设备，确保两端数据完全一致；将需求拆解为蓝牙通信指令清单与硬件团队对齐。"]
+                output: ["完成 BLE 低功耗蓝牙通信方案：手机作为中心设备发起连接，枕头作为外围设备广播并响应，降低使用门槛，覆盖设备配网、闹钟设置与参数调节。", "创新设计“双通道唤醒”方案：闹钟同时写入硬件与手机系统级定时任务，任一通道到点即可唤醒，避免单通道失效导致闹钟不响。", "建立“重连即对账”规则，蓝牙断开重连后 APP 自动同步全部闹钟至设备，确保两端数据完全一致；将需求拆解为蓝牙通信指令清单与硬件团队对齐。"],
+                doc: ["smart-pillow-prd.pdf", "智能闹钟枕 App 项目产品需求文档（PRD）"]
             },
             "marketplace": {
                 index: "04", title: "研祥跳蚤商城", category: "电商系统 · 从 0 到 1",
@@ -93,6 +101,9 @@
                 shot: "gm", shotImages: [
                     ["gm/01.png", "App Store 应用页"],
                     ["gm/02.jpg", "安卓应用商店详情与界面预览"]
+                ],
+                links: [
+                    ["原型", "GM 钟表 APP 交互原型（蓝湖）", "https://lanhuapp.com/link/#/invite?sid=qXxtLJNa", "蓝湖 Lanhu · lanhuapp.com", "teal"]
                 ],
                 problems: ["高端钟表客单价高、决策周期长，用户在购买前需要专业的干货、行情与评测内容支撑决策。", "市面钟表内容分散在综合资讯和社交平台，缺乏聚焦高端手表、内容质量高的垂直社区。", "钟表配件品类需要可信的自主品牌渠道，内容流量与配件交易之间缺少顺畅的转化链路。"],
                 role: ["负责 GM 钟表 APP 的产品方案设计与功能结构梳理，覆盖内容社区与电商交易两大板块。", "围绕钟表资讯分享、干货指南、行情文化、高清实拍与配件商城等场景梳理用户路径。", "协同设计、研发与运营推进内容发布、商品交易、用户互动等核心模块的迭代落地。"],
@@ -116,7 +127,11 @@
                 intro: "活动物料管理系统是为中企活动场景建设的企业内部管理项目，聚焦活动物料从采购入库、申请审批、领用出库到活动执行、盘点归还的全生命周期管理。系统通过统一的物料台账与在线审批流程，让物料状态、库存数量和流转进度对各角色透明可见，解决以往 Excel 分散记录、信息不同步、追溯困难的问题。",
                 shot: "marketplace", problems: ["活动物料品类多、数量大，采购、库存、领用信息分散在 Excel 和微信群中，容易错漏。", "申请、审批、出库涉及多个角色，缺少统一流程，进度不透明、责任难追溯。", "活动执行前后需要快速盘点和归还，手工核对效率低、易出错。"],
                 role: ["负责中企活动物料管理场景的需求调研、流程梳理与产品方案设计。", "设计物料台账、申请审批、出入库与盘点等核心模块，梳理多角色协作流程与权限边界。", "按政企合规要求输出原型与 PRD，协同研发完成系统落地、测试与验收交付。"],
-                output: ["搭建统一的物料电子台账，集中管理物料名称、分类、规格、库存数量与供应商信息，替代分散的 Excel 记录。", "设计在线申请—审批—出入库流程，物料状态与流转进度实时可查，审批节点责任到人、全程留痕可追溯。", "建立库存预警与活动盘点能力，库存低于阈值自动提醒，活动前后支持快速盘点与归还登记，提升物料周转效率与数据准确性。"]
+                output: ["搭建统一的物料电子台账，集中管理物料名称、分类、规格、库存数量与供应商信息，替代分散的 Excel 记录。", "设计在线申请—审批—出入库流程，物料状态与流转进度实时可查，审批节点责任到人、全程留痕可追溯。", "建立库存预警与活动盘点能力，库存低于阈值自动提醒，活动前后支持快速盘点与归还登记，提升物料周转效率与数据准确性。"],
+                links: [
+                    ["PRD", "活动物料管理系统需求文档", "https://docs.qq.com/pdf/DSmdQUFBTc2xsYUxz", "腾讯文档 · docs.qq.com", "purple"],
+                    ["原型", "活动物料管理系统原型设计", "https://mastergo.com/goto/VIj0BFGt?page_id=0:27&file=195662030060283", "MasterGo · mastergo.com", "teal"]
+                ]
             },
             "xiaojialian": {
                 index: "08", title: "小家链 APP 电商商城", category: "移动电商 · APP 商城",
@@ -129,14 +144,20 @@
                 output: ["搭建从商品浏览、搜索、详情、购物车到下单支付的完整交易链路，优化移动端商品展示与下单操作路径。", "设计优惠券、拼团、秒杀等营销玩法的产品规则，明确活动与商品、订单、库存之间的关系与互斥逻辑。", "建设订单物流追踪与售后退换流程，让用户实时掌握订单状态，降低售后咨询与人工处理成本。"]
             },
             "decentralized-wallet": {
-                index: "09", title: "去中心化钱包", category: "Web3 产品 · 数字资产管理",
-                summary: "参考 TP 钱包体验打造的轻量去中心化钱包，对接两条主流公链，聚焦资产管理与转账收款，不内置 DApp 浏览器。",
-                tags: ["Web3", "多链资产管理", "助记词", "转账收款"],
-                metrics: [["2 条主流公链", "资产统一管理"], ["无浏览器", "聚焦资产核心场景"]],
-                intro: "去中心化钱包是一款参考 TP 钱包使用体验设计的轻量数字资产管理工具。产品定位为简洁、安全的资产钱包，首期对接两条主流公链（如 ETH、BSC），支持钱包创建/导入、多链资产查看、转账收款与交易记录；为聚焦核心场景、降低安全风险，产品不内置 DApp 浏览器，把资产管理本身做深做透。",
-                shot: "pillow", problems: ["去中心化钱包涉及助记词、私钥管理，用户操作门槛和安全认知成本高。", "多链资产分散，用户需要在一个钱包内统一查看和管理不同链上的代币。", "钱包一旦误操作或泄露私钥将造成资产损失，关键节点必须有强提示与二次确认。"],
-                role: ["参考 TP 钱包等主流产品，负责去中心化钱包的产品定位与信息架构设计。", "设计钱包创建/导入、多链资产管理、转账收款、交易记录等核心流程。", "在助记词备份、转账授权等关键节点规划安全提示、二次确认与风险反馈机制。"],
-                output: ["设计助记词创建、私钥/助记词导入的完整钱包创建与备份流程，通过分步引导与二次确认降低误操作与泄露风险。", "实现两条主流公链的资产统一管理，在首页聚合展示多链代币余额，支持按链切换查看与收款地址管理。", "打造清晰的转账、收款与交易记录流程，设置矿工费、地址校验、大额转账提醒等安全校验，在易用性与资产安全之间取得平衡。"]
+                index: "09", title: "去中心化钱包-HKT Wallet", category: "Web3 产品 · 数字资产管理",
+                summary: "参考 TP 钱包体验打造的多链去中心化钱包，覆盖以太坊、BSC 等 12+ 公链，集成多链资产、闪对兑换与 DApp 发现入口。",
+                tags: ["Web3", "多链资产管理", "助记词", "转账收款", "闪对", "DApp 浏览器"],
+                metrics: [["12+ 条公链", "以太坊、BSC 等多链资产统一管理"], ["资产 + 兑换 + DApp", "一站式 Web3 入口"]],
+                intro: "HKT Wallet 是一款参考 TP 钱包使用体验设计的多链去中心化数字资产钱包。产品覆盖以太坊、币安智能链（BSC）等 12 条以上主流公链，支持钱包创建/导入、多链资产查看、转账收款与交易记录，并内置闪对兑换与 DApp 发现页，聚合 PancakeSwap、Transit Swap 等常用 DApp，形成从资产管理、链上兑换到 DApp 访问的一站式 Web3 入口。",
+                shot: "wallet", shotImages: [
+                    ["wallet-splash.png", "启动页 · HKT Wallet 品牌视觉"],
+                    ["wallet-list.png", "资产首页与多链钱包列表（BSC/BTC/ETH，含 HD 钱包）"],
+                    ["wallet-swap.png", "闪对兑换：USDT 等代币买卖，支持 12+ 条区块链"],
+                    ["wallet-discover.png", "发现页：DApp 浏览器与热门 DApp 导航"]
+                ],
+                problems: ["去中心化钱包涉及助记词、私钥管理，用户操作门槛和安全认知成本高。", "公链与代币种类繁多，用户需要在一个钱包内统一查看和管理不同链上的资产。", "资产管理、链上兑换与 DApp 使用分散在多个工具，操作链路长、体验割裂。"],
+                role: ["参考 TP 钱包等主流产品，负责 HKT Wallet 的产品定位与信息架构设计。", "设计钱包创建/导入、多链资产管理、转账收款、闪对兑换等核心流程。", "规划 DApp 发现页的内容导航结构，并在助记词备份、转账授权等关键节点设计安全提示、二次确认与风险反馈机制。"],
+                output: ["设计助记词创建、私钥/助记词导入的完整钱包创建与备份流程，通过分步引导与二次确认降低误操作与泄露风险。", "实现 12 条以上主流公链的资产统一管理，首页聚合展示多链代币余额与美元估值，钱包列表支持按链切换、HD 钱包与多地址管理。", "打通资产—交易—应用链路：内置闪对兑换支持跨币种买卖，发现页提供 DApp 搜索与分类导航；并在转账、兑换等环节设置矿工费、地址校验、大额提醒等安全校验，兼顾易用性与资产安全。"]
             },
             "ai-video-editing": {
                 index: "10", title: "AI 视频剪辑工作流", category: "AI 产品 · 内容生产 Skill",
@@ -166,6 +187,12 @@
         const screenshotMarkup = data.shotImages
             ? `<div class="case-real-screenshot-grid">${data.shotImages.map(([src, label]) => `<figure class="case-screenshot-card"><button type="button" class="case-screenshot-trigger" data-full-image="${src}" data-image-label="${label}" aria-label="放大查看${label}"><img src="${src}" alt="${data.title}${label}界面" loading="lazy"><span class="case-screenshot-zoom">点击放大</span></button><figcaption>${label}</figcaption></figure>`).join("")}</div>${data.shotArchitecture ? `<p class="case-material-note">真实系统界面 · 覆盖评估任务创建、任务管理、综合评估与分项维度评估</p><div class="case-architecture-group"><details class="case-architecture"><summary>查看可信 AI 技术架构图</summary><button type="button" class="case-architecture-trigger" data-full-image="${data.shotArchitecture}" data-image-label="可信 AI 技术架构图" aria-label="放大查看可信 AI 技术架构图"><img src="${data.shotArchitecture}" alt="${data.title}技术架构图" loading="lazy"><span>点击放大查看</span></button></details>${data.shotFeatureArchitecture ? `<details class="case-architecture"><summary>查看可信 AI 项目功能架构图</summary><button type="button" class="case-architecture-trigger" data-full-image="${data.shotFeatureArchitecture}" data-image-label="可信 AI 项目功能架构图" aria-label="放大查看可信 AI 项目功能架构图"><img src="${data.shotFeatureArchitecture}" alt="${data.title}功能架构图" loading="lazy"><span>点击放大查看</span></button></details>` : ""}</div>` : ""}`
             : screens[data.shot];
+        const resources = [];
+        if (data.doc) resources.push({ badge: "PDF", tone: "purple", title: data.doc[1], note: "点击链接在浏览器中打开完整文档", href: data.doc[0], type: "application/pdf" });
+        (data.links || []).forEach(([badge, title, href, note, tone]) => resources.push({ badge, tone, title, note, href }));
+        const resourceMarkup = resources.length
+            ? `<section class="case-doc"><h2>相关文档</h2><div class="case-doc-list">${resources.map(r => `<a class="case-doc-link case-doc-${r.tone}" href="${r.href}" target="_blank" rel="noopener"${r.type ? ` type="${r.type}"` : ""}><span class="case-doc-badge">${r.badge}</span><span class="case-doc-meta"><strong>${r.title}</strong><small>${r.note}</small></span><svg class="case-doc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>`).join("")}</div></section>`
+            : "";
         document.getElementById("caseContent").innerHTML = `
             <section><h2>项目介绍</h2><p>${data.intro}</p></section>
             <section class="case-page-impact" aria-label="项目核心成果">
@@ -174,7 +201,8 @@
             </section>
             ${data.shotImages ? `<section><h2>项目截图</h2><div class="case-shot case-shot-${data.shot}">${screenshotMarkup}</div></section>` : ""}
             <div class="case-page-grid"><section><h2>问题</h2>${list(data.problems)}</section><section><h2>职责</h2>${list(data.role)}</section></div>
-            <section class="case-page-output"><h2>产出</h2>${list(data.output)}</section>`;
+            <section class="case-page-output"><h2>产出</h2>${list(data.output)}</section>
+            ${resourceMarkup}`;
     </script>
     <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="项目截图放大预览">
         <button type="button" class="image-lightbox-close" aria-label="关闭图片预览">×</button>
@@ -239,5 +267,6 @@
         lightbox.addEventListener("click", event => { if (event.target === lightbox) closeLightbox(); });
         window.addEventListener("keydown", event => { if (event.key === "Escape" && lightbox.classList.contains("active")) closeLightbox(); });
     </script>
+    <script src="chat-widget.js"></script>
 </body>
 </html>
