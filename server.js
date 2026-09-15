@@ -344,6 +344,21 @@ const server = http.createServer((req, res) => {
     }
 
     const ext = path.extname(filePath).toLowerCase();
+
+    // 仅本地运行且已配置大模型密钥时，向 HTML 注入问答助手启用标记。
+    // GitHub Pages 等纯静态托管没有此标记，前端据此隐藏 AI 对话入口，避免招聘方点到报错。
+    if (ext === ".html" && LLM_API_KEY) {
+      let html = data.toString("utf8");
+      if (html.includes("</head>") && !html.includes("rag-local")) {
+        html = html.replace("</head>", '  <script>document.documentElement.classList.add("rag-local");</script>\n</head>');
+      }
+      res.writeHead(200, {
+        "Content-Type": mimeTypes[ext] || "application/octet-stream",
+        "Cache-Control": cacheConfig[ext] || "no-cache"
+      });
+      return res.end(html);
+    }
+
     res.writeHead(200, {
       "Content-Type": mimeTypes[ext] || "application/octet-stream",
       "Cache-Control": cacheConfig[ext] || "no-cache"

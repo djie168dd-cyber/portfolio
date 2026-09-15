@@ -82,6 +82,10 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+        // 仅本地运行（server.js 检测到密钥并注入 rag-local 标记）时启用问答助手。
+        // GitHub Pages 等纯静态环境无此标记，不创建面板与悬浮入口，避免点开报错。
+        if (!document.documentElement.classList.contains("rag-local")) return;
+
         // 页面内的触发按钮（如 Hero 区“和我的经历直接对话”）；存在时不显示悬浮入口
         const inlineTriggers = Array.from(document.querySelectorAll("[data-rag-open]"));
         const refs = buildDom(!inlineTriggers.length);

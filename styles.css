@@ -563,11 +563,18 @@ img {
     animation: fadeInUp 0.8s ease 0.3s both;
 }
 
-/* AI 互动简历入口（首行主推 CTA，柔和紫样式区别于主按钮与描边按钮） */
+/* AI 互动简历入口（首行主推 CTA，柔和紫样式区别于主按钮与描边按钮）
+   默认隐藏，仅本地运行（<html class="rag-local">，由 server.js 注入）时显示；
+   GitHub Pages 等纯静态环境无后端 /api/ask，隐藏以免点开报错 */
 .hero-ai {
+    display: none;
     margin-top: 0;
     margin-bottom: 18px;
     animation: fadeInUp 0.8s ease 0.42s both;
+}
+
+.rag-local .hero-ai {
+    display: block;
 }
 .btn-ai {
     padding: 12px 20px;
