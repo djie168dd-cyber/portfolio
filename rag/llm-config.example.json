@@ -1,0 +1,5 @@
+{
+  "apiKey": "在此填入你的大模型 API Key",
+  "baseUrl": "https://api.deepseek.com",
+  "model": "deepseek-chat"
+}

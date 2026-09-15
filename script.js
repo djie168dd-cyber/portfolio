@@ -304,3 +304,49 @@ setTimeout(hideLoader, 2500); // 硬兜底：2.5s 后无论如何隐藏
 
 // 项目详情已迁移至 case-study.html，并在新标签页打开。
 
+
+// ============================================
+// 微信号一键复制（移动端友好，含兜底）
+// ============================================
+(function () {
+    const btn = document.getElementById('wechatCopy');
+    const hint = document.getElementById('wechatHint');
+    if (!btn) return;
+    const showTip = (text) => {
+        if (!hint) return;
+        const old = hint.textContent;
+        hint.textContent = text;
+        hint.classList.add('copied');
+        setTimeout(() => { hint.textContent = old; hint.classList.remove('copied'); }, 1600);
+    };
+    const fallbackCopy = (text) => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-999px';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, ta.value.length);
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+        return ok;
+    };
+    btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy') || '';
+        let ok = false;
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                ok = true;
+            } else {
+                ok = fallbackCopy(text);
+            }
+        } catch (e) {
+            ok = fallbackCopy(text);
+        }
+        showTip(ok ? '✓ 已复制微信号' : '请长按号码复制');
+    });
+})();

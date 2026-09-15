@@ -14,3 +14,6 @@ desktop.ini
 
 # WorkBuddy 本地记忆（非网站运行必需）
 .workbuddy/
+
+# 问答助手本地大模型密钥（切勿提交/外发）
+rag/llm-local.json
