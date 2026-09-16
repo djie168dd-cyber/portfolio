@@ -1,8 +1,12 @@
 # 邓洁 · 产品经理作品集
 
-个人作品集网站，展示产品项目经历与能力。纯静态站点，无需后端、无需数据库。
+个人作品集网站，展示产品项目经历与能力。页面本身为纯静态文件（无需数据库）；
+`server.js` 除托管页面外还提供左下角「问我」RAG 问答接口（`/api/ask`），该功能需要 Node 运行环境。
 
-🔗 **在线访问**：<https://djie168dd-cyber.github.io/portfolio/>
+🔗 **在线访问**：
+
+- 纯静态版（无问答助手）：<https://djie168dd-cyber.github.io/portfolio/>
+- 完整版含问答助手（Render 托管 server.js）：部署后填 Render 地址，详见《问答助手配置说明.md》第六节
 
 ## 简介
 

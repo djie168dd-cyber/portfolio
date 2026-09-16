@@ -249,10 +249,44 @@ async function callLlm(question, contexts, history) {
   }
 }
 
+// ---- 防滥用：简单内存限频（部署到公网/免费托管时保护大模型额度）----
+// 可用环境变量 RATE_MAX（每窗口请求数）、RATE_WINDOW_MS（窗口毫秒）调整
+const RATE_WINDOW_MS = Number(process.env.RATE_WINDOW_MS || 60000);
+const RATE_MAX = Number(process.env.RATE_MAX || 12);
+const rateBuckets = new Map();
+
+// 周期性清理过期计数桶，避免内存无限增长（.unref 不阻止进程退出）
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, bucket] of rateBuckets) {
+    if (now >= bucket.resetAt) rateBuckets.delete(key);
+  }
+}, RATE_WINDOW_MS).unref();
+
+function clientIpOf(req) {
+  // Render 等经反向代理，真实 IP 在 x-forwarded-for 首段
+  const xff = req.headers["x-forwarded-for"];
+  if (typeof xff === "string" && xff.length) return xff.split(",")[0].trim();
+  return req.socket.remoteAddress || "unknown";
+}
+
 async function handleAsk(req, res) {
   if (req.method !== "POST") {
     res.writeHead(405, { "Content-Type": "text/plain; charset=utf-8", "Allow": "POST" });
     return res.end("Method Not Allowed");
+  }
+
+  // 限频：同一 IP 每窗口最多 RATE_MAX 次
+  const ip = clientIpOf(req);
+  const now = Date.now();
+  let bucket = rateBuckets.get(ip);
+  if (!bucket || now >= bucket.resetAt) {
+    bucket = { count: 0, resetAt: now + RATE_WINDOW_MS };
+    rateBuckets.set(ip, bucket);
+  }
+  bucket.count += 1;
+  if (bucket.count > RATE_MAX) {
+    return sendJson(res, 429, { error: "请求过于频繁，请稍后再试。" });
   }
 
   let raw = "";
